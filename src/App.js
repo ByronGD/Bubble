@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import React from 'react';
+=======
+>>>>>>> master
 import logo from './logo.svg';
 import './App.css';
 
