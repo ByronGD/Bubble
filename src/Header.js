@@ -12,8 +12,7 @@ import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import {BrowserRouter as Router, Route, useHistory} from 'react-router-dom';
-import PublishContent from './Forms/PublishContent';
+import {useHistory} from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -33,11 +32,11 @@ const Header =()=>{
     const [menuOpen, flipMenu] = useState(false);
     const [userName, setName] = useState("ByronGD");
     const [loggedIn, validateLogin] = useState(true)
-    const history = useHistory();
+    let history = useHistory();
 
-    const changePage = (page,history) =>{
-        console.log(page);
-        history.push('/PublishContent');
+    function changePage(page){
+        
+        history.push('/'+page);
     };
 
     const drawerItems = () =>(
@@ -51,8 +50,6 @@ const Header =()=>{
             </List>
         </div>
     );
-
-    console.log(menuOpen);
 
     return(
         <div className={classes.root}>

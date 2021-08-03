@@ -4,11 +4,15 @@ import './index.css';
 import LandingPage from './LandingPage';
 import reportWebVitals from './reportWebVitals';
 import Header from './Header'
+import AppBody from './RouteManager'
+import { BrowserRouter as Router } from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header/>
-    <LandingPage />
+    <Router>
+      <Header/>
+      <AppBody/>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
