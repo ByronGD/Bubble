@@ -6,12 +6,24 @@ import reportWebVitals from './reportWebVitals';
 import Header from './Header'
 import AppBody from './RouteManager'
 import { BrowserRouter as Router } from 'react-router-dom';
+import UserNav from './UserNav';
+import Grid from '@material-ui/core/Grid'
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <Header/>
-      <AppBody/>
+      <Grid container>
+        <Grid item xs={2}>
+          <UserNav/>
+        </Grid>
+        <Grid item xs={7}>
+            <Header/>
+            <AppBody/>
+        </Grid>
+        <Grid item xs={2}>
+          
+        </Grid>
+      </Grid>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')
