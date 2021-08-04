@@ -1,14 +1,16 @@
-import './App.css';
+//This is the default home pare for all users
+
+import React from 'react';
 import Paper from '@material-ui/core/Paper'
 
 function LandingPage() {
   return (
-    <div className="App">
-      <Paper>
+    
+    <React.Fragment>
+      <Paper square>
         This is the LandingPage
       </Paper>
-        
-    </div>
+    </React.Fragment>
   );
 }
 
