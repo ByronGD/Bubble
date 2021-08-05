@@ -7,20 +7,28 @@ import {useHistory} from 'react-router-dom';
 import { Avatar } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core";
 import DomsFace from './Images/DomsFace.jpg'
+import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
+import PublishOutlinedIcon from '@material-ui/icons/PublishOutlined';
+import PersonAddOutlinedIcon from '@material-ui/icons/PersonAddOutlined';
+import PeopleOutlinedIcon from '@material-ui/icons/PeopleOutline';
 
 
 const styles = makeStyles((theme)=>({
 
-    small_avitar:{
+    small_avatar:{
         width: theme.spacing(3),
         height: theme.spacing(3),
     },
-    large_avitar:{
-        align:'center',
+    large_avatar:{
+        margin:'auto',
+        marginTop:'25px',
+        marginBottom:'25px',
+        border: '0.1px solid lightgray',
         width: theme.spacing(25),
         height: theme.spacing(25),
     },
     nav_button:{
+        textAlign:'right',
         marginRight:'30px'
     },
     nav_pannel:{
@@ -30,10 +38,6 @@ const styles = makeStyles((theme)=>({
 })) ;
 
 const UserNav = () =>{
-    //user avitar
-    //Publish content
-    //following
-    //followers
 
     let history = useHistory();
     const classes = styles();
@@ -44,23 +48,23 @@ const UserNav = () =>{
 
     return (
         <React.Fragment>      
-            <Paper style={{height:'100%'}}>    
-                    <Avatar className={classes.large_avitar} alt="DomsFace" src={DomsFace} style={{alignSelf:'center'}}/>
+            <Paper style={{height:'100vh'}}>    
+                    <Avatar className={classes.large_avatar} alt="DomsFace" src={DomsFace} style={{alignSelf:'center'}}/>
                     <div className={classes.nav_button} >
                         <Button onClick={()=>changePage('/profilesettings')}>
-                           <b>Profile settings</b> 
+                           <b>Profile settings</b>&nbsp;<SettingsOutlinedIcon/>
                         </Button>
                         <br/>
                         <Button onClick={()=>changePage('/publishcontent')}>
-                            <b>Publish Content</b> 
+                            <b>Publish Content</b>&nbsp;<PublishOutlinedIcon/>
                         </Button>
                         <br/>
                         <Button onClick={()=>changePage('/following')}>
-                            <b>Following</b>   
+                            <b>Following</b>&nbsp;<PersonAddOutlinedIcon/>
                         </Button>
                         <br/>
                         <Button onClick={()=>changePage('/followers')}>
-                            <b>Followers</b>  
+                            <b>Followers</b>&nbsp;<PeopleOutlinedIcon/>
                         </Button>  
                     </div>
 
